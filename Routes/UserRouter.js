@@ -2,6 +2,8 @@ const router = require("express").Router();
 const User = require("../Models/User")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
+const {getUser} = require("../Middleware/find")
+
 
 // GET ALL USER
 router.get("/", async (req, res) => {
@@ -105,18 +107,18 @@ router.delete("/:id", getUser, async (req, res, next) => {
   });
 
 // GET USER FUNCTION
-async function getUser(req, res, next) {
-    let user;
-    try {
-      user = await User.findById(req.params.id);
+// async function getUser(req, res, next) {
+//     let user;
+//     try {
+//       user = await User.findById(req.params.id);
      
-      if (user == null){ res.status(404).json({ message: "Could not find user" })};
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-    res.user = user;
-    return next();
-  }
+//       if (user == null){ res.status(404).json({ message: "Could not find user" })};
+//     } catch (error) {
+//       res.status(500).json({ message: error.message });
+//     }
+//     res.user = user;
+//     return next();
+//   }
 
 
 module.exports = router

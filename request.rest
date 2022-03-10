@@ -38,3 +38,14 @@ Content-Type: application/json
     "password": "1234586",
     "profilePicture": ""
 }
+
+###
+POST http://localhost:2088/posts
+Content-Type: application/json
+
+{  
+  "title": "Firtspost",
+    "description": "This my very first post",
+    "photo": ""
+    
+}
