@@ -10,6 +10,15 @@ Content-Type: application/json
 ### eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IktHIiwiZW1haWwiOiJLR0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5eTM3YmhwUnk2TTJWemlGcklyWG9PMHdzS0NZd3RQMFJHSnl5MTRtaUROMXo4bTFqWUhQMiIsInByb2ZpbGVQaWN0dXJlIjoiIiwiX2lkIjoiNjIyOWZlOTczMmU3MmZmMzBmNzI3ZDIxIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwiX192IjowfQ.UN31CuWmhpTjsBFursRpivnmOhuTDJmbuD95Q21OWeA
 
 ###
+POST http://localhost:2088/posts
+Content-Type: application/json
+
+{
+    "username":"KG",
+    "email":"KG@gmail.com",
+    "password":"123456"
+}
+###
 GET http://localhost:2088/users
 Content-Type: application/json
 
@@ -21,11 +30,11 @@ Content-Type: application/json
 
 PATCH http://localhost:2088/users/login
 Content-Type: application/json
-Authorization: : eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IktHIiwiZW1haWwiOiJLR0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5eTM3YmhwUnk2TTJWemlGcklyWG9PMHdzS0NZd3RQMFJHSnl5MTRtaUROMXo4bTFqWUhQMiIsInByb2ZpbGVQaWN0dXJlIjoiIiwiX2lkIjoiNjIyOWZlOTczMmU3MmZmMzBmNzI3ZDIxIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwiX192IjowfQ.UN31CuWmhpTjsBFursRpivnmOhuTDJmbuD95Q21OWeA
+# Authorization: : eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IktHIiwiZW1haWwiOiJLR0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5eTM3YmhwUnk2TTJWemlGcklyWG9PMHdzS0NZd3RQMFJHSnl5MTRtaUROMXo4bTFqWUhQMiIsInByb2ZpbGVQaWN0dXJlIjoiIiwiX2lkIjoiNjIyOWZlOTczMmU3MmZmMzBmNzI3ZDIxIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwiX192IjowfQ.UN31CuWmhpTjsBFursRpivnmOhuTDJmbuD95Q21OWeA
 
 {  
-     "email":"KG@gmail.com",
-    "password":"123456"
+     "username": "Jane",
+    "email": "Jane@gmail.com"
 }
 
 ###
@@ -44,8 +53,26 @@ POST http://localhost:2088/posts
 Content-Type: application/json
 
 {  
-  "title": "Firtspost",
+    "username": "Jane",
+  "title": "Jane's first post",
     "description": "This my very first post",
+    "photo": ""
+    
+}
+
+###
+GET http://localhost:2088/posts/622900a3175267483b38ff93
+Content-Type: application/json
+ 
+
+###
+PUT http://localhost:2088/posts/622a308d003c284492385295
+Content-Type: application/json
+
+{  
+    "username": "ande",
+  "title": "ande's updated second updated post replacing the first update",
+    "description": "This my very second updated post",
     "photo": ""
     
 }

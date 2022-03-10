@@ -14,85 +14,63 @@ router.get("/", async (req, res) => {
     }
   });
 
-// GET ONE POST
-router.get("/:id", getPost, (req, res, next) => {
+// GET ALL POSTS BY ONE USER USING USER id
+router.get("/:id", getPost, (req, res) => {
     const post = req.params.id
     res.send(res.post);
   });
 
-// REGISTER
-router.post("/register", async (req, res)=>{
-    const {title, description, categories} = req.body
-
-    const newPost = new Post({
-                title: req.body.title,
-                description: req.body.description,
-                categories: req.body.categories,
-            })
-
+// CREATE POST... FROM THE YOUTUBE VIDEO CODE
+router.post("/", async (req, res, next)=>{
+    const newPost = new Post(req.body)
     try{
-        const post = await newPost.save()
-        try{
-            const access_token = jwt.sign(
-                JSON.stringify(newPost),
-                process.env.ACCESS_TOKEN_SECRET
-            );  
-            
-        res.status(201).json({  jwt: access_token})
-        } catch(error){
-            res.status(500).json({message: error.message})
-        }
-    }catch(error){
-        res.status(400).json({message: error.message})
-
+        const savedPost = await newPost.save()
+        res.status(200).json(savedPost)
+    }catch(err){
+        res.status(500).json(err)
     }
-
 })
 
-// LOGIN USER WITH EMAIL AND PASSWORD
-router.patch("/login",  async (req, res, next) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-  
-    if (!user) res.status(404).json({ message: "Could not find user" });
-    if (await bcrypt.compare(password, user.password)) {
-      try {
-        const access_token = jwt.sign(
-          JSON.stringify(user),
-          process.env.MONGO_PASS
-        );
-        res.status(201).json({ jwt: access_token });
-      } catch (error) {
-        res.status(500).json({ message: error.message });
-      }
-    } else {
-      res
-        .status(400)
-        .json({ message: "Email and password combination do not match" });
-    }
-  }); 
 
-//UPDATE USERS
-router.put("/:id", getUser, async (req, res, next) => {
-    const { username, email, password, profilePicture } = req.body;
-    if (username) res.user.username = username;
-    if (email) res.user.email = email;
-    if (password) {
-      const salt = await bcrypt.genSalt();
-      const hashedPassword = await bcrypt.hash(password, salt);
-      res.user.password = hashedPassword;
-    }
-    if (profilePicture) res.user.profilePicture = profilePicture;
+//UPDATE POST
+// router.put("/:id", getPost, async (req, res, next) => {
+//     const { title, description, photo, categories } = req.body;
+//     if (title) res.user.title = title;
+//     if (description) res.user.description = description;
+//     if (photo) res.user.photo = photo;
+//     if (categories) res.user.categories = categories;
     
-    try {
-      const updatedUser = await res.user.save();
-      res.status(201).send(updatedUser);
-    } catch (error) {
-      res.status(400).json({ message: error.message })
+//     try {
+//       const updatedPost = await res.post.save();
+//       res.status(201).send(updatedPost);
+//     } catch (error) {
+//       res.status(400).json({ message: error.message })
+//     }
+//   })
+
+// UPDATE AND REPLACE POST BY POST id
+router.put("/id", async (req, res)=>{
+    try{
+        const post = await Post.findById(req.params.id)
+        if(post.username === req.body.username){
+              try{
+            const updatedPost = await Post.findById(req.params.id, {
+                $set: req.body
+            }, {new:true})
+            res.status(200).json(updatedPost)
+        }catch(err){
+
+        }  
+        }else{
+            res.status(101).json("You can only update your own post")
+        }
+ 
+    }catch(err){
+        res.status(500).json(err)
     }
-  })
+})
   
-// DELETE A USER
+// DELETE A POST
 router.delete("/:id", getUser, async (req, res, next) => {
     const user = { id: req.params.id };
     try {
