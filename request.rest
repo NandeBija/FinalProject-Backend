@@ -1,0 +1,40 @@
+
+POST http://localhost:2088/users/register
+Content-Type: application/json
+
+{
+    "username":"KG",
+    "email":"KG@gmail.com",
+    "password":"123456"
+}
+### eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IktHIiwiZW1haWwiOiJLR0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5eTM3YmhwUnk2TTJWemlGcklyWG9PMHdzS0NZd3RQMFJHSnl5MTRtaUROMXo4bTFqWUhQMiIsInByb2ZpbGVQaWN0dXJlIjoiIiwiX2lkIjoiNjIyOWZlOTczMmU3MmZmMzBmNzI3ZDIxIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwiX192IjowfQ.UN31CuWmhpTjsBFursRpivnmOhuTDJmbuD95Q21OWeA
+
+###
+GET http://localhost:2088/users
+Content-Type: application/json
+
+###
+DELETE http://localhost:2088/users/6228f686119f518ee8ce5065
+Content-Type: application/json
+
+###
+
+PATCH http://localhost:2088/users/login
+Content-Type: application/json
+Authorization: : eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IktHIiwiZW1haWwiOiJLR0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5eTM3YmhwUnk2TTJWemlGcklyWG9PMHdzS0NZd3RQMFJHSnl5MTRtaUROMXo4bTFqWUhQMiIsInByb2ZpbGVQaWN0dXJlIjoiIiwiX2lkIjoiNjIyOWZlOTczMmU3MmZmMzBmNzI3ZDIxIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwiX192IjowfQ.UN31CuWmhpTjsBFursRpivnmOhuTDJmbuD95Q21OWeA
+
+{  
+     "email":"KG@gmail.com",
+    "password":"123456"
+}
+
+###
+PUT http://localhost:2088/users/6228f686119f518ee8ce5065
+Content-Type: application/json
+
+{  
+  "username": "NandeUpdated",
+    "email": "Nande@gmail.com",
+    "password": "1234586",
+    "profilePicture": ""
+}
