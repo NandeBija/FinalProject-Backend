@@ -25,7 +25,7 @@ const BookingSchema = new mongoose.Schema({
  },
  phone:{
     type:String,
-    required:true
+    required:false
  },
  photographer_name:{
     type:String,
