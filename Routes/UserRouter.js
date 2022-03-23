@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken");
 const { getUser } = require("../Middleware/find");
 
 // GET ALL USER
-router.get("/", async (req, res) => {
+router.get("/", verifyTokenAndAdmin, async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
