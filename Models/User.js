@@ -19,6 +19,10 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:false,
         default:""
+    },
+    isAdmin:{
+        type:Boolean,
+        default: false
     }
 
 },{timestamps:true})  //gives the created an dupdated at times //

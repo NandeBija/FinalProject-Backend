@@ -1,27 +1,36 @@
-
+###              USERS USERS USERS USERS USERS 
 POST http://localhost:2088/users/register
 Content-Type: application/json
 
 {
-    "username":"KG",
-    "email":"KG@gmail.com",
+    "username":"Alex",
+    "email":"Alex@gmail.com",
     "password":"123456"
 }
-### eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IktHIiwiZW1haWwiOiJLR0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5eTM3YmhwUnk2TTJWemlGcklyWG9PMHdzS0NZd3RQMFJHSnl5MTRtaUROMXo4bTFqWUhQMiIsInByb2ZpbGVQaWN0dXJlIjoiIiwiX2lkIjoiNjIyOWZlOTczMmU3MmZmMzBmNzI3ZDIxIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwiX192IjowfQ.UN31CuWmhpTjsBFursRpivnmOhuTDJmbuD95Q21OWeA
 
 ###
-POST http://localhost:2088/posts
+
+PUT http://localhost:2088/users/622b4111dbe1a7a45d43626e
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-    "username":"KG",
-    "email":"KG@gmail.com",
-    "password":"123456"
+    "username":"Alexis",
+    "email":"Alexis@gmail.com",
+    "password":"1234567"
 }
+
+###
+
+DELETE http://localhost:2088/users/622b4111dbe1a7a45d43626e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
+
+
 ###
 GET http://localhost:2088/users
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 ###
 DELETE http://localhost:2088/users/6228f686119f518ee8ce5065
 Content-Type: application/json
@@ -30,11 +39,11 @@ Content-Type: application/json
 
 PATCH http://localhost:2088/users/login
 Content-Type: application/json
-# Authorization: : eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IktHIiwiZW1haWwiOiJLR0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5eTM3YmhwUnk2TTJWemlGcklyWG9PMHdzS0NZd3RQMFJHSnl5MTRtaUROMXo4bTFqWUhQMiIsInByb2ZpbGVQaWN0dXJlIjoiIiwiX2lkIjoiNjIyOWZlOTczMmU3MmZmMzBmNzI3ZDIxIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMFQxMzozNToxOS43OTdaIiwiX192IjowfQ.UN31CuWmhpTjsBFursRpivnmOhuTDJmbuD95Q21OWeA
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjpmYWxzZSwiX2lkIjoiNjIyYjM0NWU0Y2E2ZDE5OTBiN2YxOTJhIiwiY3JlYXRlZEF0IjoiMjAyMi0wMy0xMVQxMTozNzowMi43NzBaIiwidXBkYXRlZEF0IjoiMjAyMi0wMy0xMVQxMTozNzowMi43NzBaIiwiX192IjowfQ.NWTym5C0BzQOWWgRIFP6wDWOX9PZf3T6CF0PD8c-tq0
 
 {  
-     "username": "Jane",
-    "email": "Jane@gmail.com"
+    "email":"Alex@gmail.com",
+    "password":"123456"
 }
 
 ###
@@ -48,31 +57,98 @@ Content-Type: application/json
     "profilePicture": ""
 }
 
+### POSTS POSTS POSTS POSTS
+
+###
+GET http://localhost:2088/posts
+Content-Type: application/json
+
 ###
 POST http://localhost:2088/posts
 Content-Type: application/json
 
 {  
-    "username": "Jane",
-  "title": "Jane's first post",
-    "description": "This my very first post",
+    "author": "Jordan",
+  "title": "Jordan's post",
+    "description": "This is the first Jordan post",
     "photo": ""
     
 }
 
 ###
-GET http://localhost:2088/posts/622900a3175267483b38ff93
-Content-Type: application/json
- 
-
-###
-PUT http://localhost:2088/posts/622a308d003c284492385295
+PUT http://localhost:2088/posts/622b05be5524a80f5f9fca91
 Content-Type: application/json
 
 {  
-    "username": "ande",
-  "title": "ande's updated second updated post replacing the first update",
-    "description": "This my very second updated post",
+    "username": "Jordan",
+    "title": "Jordan's first updated postss",
+    "description": "This is the first Jordan post",
     "photo": ""
     
 }
+
+###
+DELETE http://localhost:2088/posts/622b05be5524a80f5f9fca91
+Content-Type: application/json
+
+
+### COMMENTE COMMENTE COMMENTE!
+
+POST http://localhost:2088/comments
+Content-Type: application/json
+
+{  
+    "comment": "Nade",
+  "photo": "Nande's post"
+}
+
+###
+GET http://localhost:2088/comments
+Content-Type: application/json
+
+###
+DELETE http://localhost:2088/comments/622b125cf905a8b299bc744f
+Content-Type: application/json
+
+###
+
+PUT http://localhost:2088/comments/622b0fea7d60057ea9d2940b
+Content-Type: application/json
+
+{  
+    "comment": "Jordan",
+    "photo": "Jordan's post"
+    
+}
+
+
+### PHOTOGRAPHER!! PHOTOGRAPHERS!! PHOTOGRAPHERS!!
+
+### CREATE/REGISTER a photographer
+POST http://localhost:2088/photographers 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
+
+{
+    "name":"neighbour",
+    "rate":"R50/hr",
+    "services":"Photography, Photo editing",
+    "projects":"lots and lots"
+}
+
+### GET ALL Photographers
+GET http://localhost:2088/photographers 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
+
+### UPDATE photographers
+PUT http://localhost:2088/photographers/623a217ee13f69ea27e248d1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
+
+{
+"name": "Sekzin",
+    "rate": "R80/hr",
+    "services": "Photography, Photo editing, Photography lessons",
+    "projects": "a few"
+    }

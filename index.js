@@ -6,6 +6,9 @@ const mongoose = require("mongoose")
 const authRoute = require("./Routes/auth")
 const userRoute = require("./Routes/UserRouter")
 const postRouter = require("./Routes/PostRouter")
+// const commentRouter = require("./Routes/CommentRouter")
+const photographerRouter = require("./Routes/PhotographerRouter")
+
 const {getPost, getUser} = require("./Middleware/find")
 
 dotenv.config();
@@ -24,6 +27,8 @@ app.use(cors());
 app.use("/auth", authRoute)
 app.use("/users", userRoute)
 app.use("/posts", postRouter)
+// app.use("/comments", commentRouter)
+app.use("/photographers", photographerRouter)
 
 app.listen(app.get("port"), (server) => {
   console.info(`Server listen on port ${app.get("port")}`);
