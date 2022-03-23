@@ -130,7 +130,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-    "name":"class",
+    "name":"hisTall",
     "rate":"R50/hr",
     "services":"Photography, Photo editing",
     "projects":"lots and lots",
@@ -153,3 +153,23 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3Z
     "services": "Photography, Photo editing, Photography lessons",
     "projects": "a few"
     }
+
+
+########### BOOKINGS!###############################
+POST http://localhost:2088/booking 
+Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
+
+{
+  "city":"Cape Town",
+    "date":"12/04/2022",
+    "time":"08:12AM",
+    "email":"Nande@gmail.com",
+    "phone":"0824072120",
+    "photographer_name":"Seko Mpofu"
+}
+
+###
+GET http://localhost:2088/booking
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
