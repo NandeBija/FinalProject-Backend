@@ -6,8 +6,65 @@ const jwt = require("jsonwebtoken")
 const {getPhotographer} = require("../Middleware/find")
 
 
-// CREATE NEW PHOTOGRAPHER 
-router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
+
+// REGISTER AS A PHOTOGRAPHER
+router.post("/register/", async (req, res)=>{
+  const {name, email, password} = req.body
+  const salt = await bcrypt.genSalt(10)
+  const hashedPassword = await bcrypt.hash(req.body.password, salt)
+
+  const newUser = new User({
+              name: req.body.name,
+              email: req.body.email,
+              password: hashedPassword,
+          })
+
+  try{
+      const user = await newUser.save()
+      try{
+          const access_token = jwt.sign(
+              JSON.stringify(newUser),
+              process.env.ACCESS_TOKEN_SECRET
+          );  
+          
+      res.status(201).json({  jwt: access_token})
+      } catch(error){
+          res.status(500).json({message: error.message})
+      }
+  }catch(error){
+      res.status(400).json({message: error.message})
+
+  }
+
+})
+
+// LOGIN AS PHOTOGRAPHER WITH EMAIL AND PASSWORD
+router.patch("/login/photographer",  async (req, res, next) => {
+  const { email, password } = req.body;
+  const photographer = await Photographer.findOne({ email });
+
+  if (!photographer) res.status(404).json({ message: "Could not find photographer" });
+  if (await bcrypt.compare(password, photographer.password)) {
+    try {
+      const access_token = jwt.sign(
+        JSON.stringify(user),
+        process.env.MONGO_PASS 
+      );
+      res.status(201).json({ jwt: access_token });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  } else {
+    res
+      .status(400)
+      .json({ message: "Email and password combination do not match" });
+  }
+}); 
+
+
+
+// CREATE A NEW PHOTOGRAPHER PROFILE
+router.post("/proifle", [verifyTokenAndAuthorization], async(req, res, next)=>{
     const {name, rate, services, projects} = req.body
     const newPhotographer = await new Photographer(req.body)
 
@@ -18,6 +75,10 @@ router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
         res.status(500).json(err)
     }
 });
+
+
+
+
 
 // GET ALL photographers using authenticated user token
 router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, res) => {
