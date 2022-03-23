@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const PhotographerSchema = new mongoose.Schema({
  name:{
@@ -22,9 +22,7 @@ const PhotographerSchema = new mongoose.Schema({
    type:Array,
    required:false
    
-}
+ },
+},{timestamps:true}) 
 
-},{timestamps:true})  //gives the created an dupdated at times //
-
-
-module.exports = mongoose.model("Photographer", PhotographerSchema)
+module.exports = mongoose.model("Photographer", PhotographerSchema);

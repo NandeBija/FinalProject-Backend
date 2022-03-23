@@ -19,6 +19,8 @@ router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
     }
 });
 
+
+
 // GET ALL photographers using authenticated user token
 router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, res) => {
     const username = req.query.user   
