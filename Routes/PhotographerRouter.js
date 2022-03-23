@@ -8,14 +8,14 @@ const {getPhotographer} = require("../Middleware/find")
 
 // CREATE NEW PHOTOGRAPHER 
 router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
-    const {name, rate, services, projects} = req.body
+    const {name, rate, services, projects, role} = req.body
     const newPhotographer = await new Photographer(req.body)
 
     try{
         const savedPhotographer = await newPhotographer.save()
         res.status(200).json(savedPhotographer)
     }catch(error){
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 });
 

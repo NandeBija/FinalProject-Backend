@@ -6,7 +6,10 @@ const PhotographerSchema = new mongoose.Schema({
      required:true,
      unique:true
  },
- 
+ role:{
+    type: String,
+    required: true
+ },
  rate:{
     type:String,
     required:true,
