@@ -7,7 +7,7 @@ const {getPost} = require("../Middleware/find")
 
 
 // CREATE A BOOKING
-router.post("/",  verifyTokenAndAuthorization,  async(req, res, next)=>{
+router.post("/",  async(req, res, next)=>{
     const {username, city, date, time, email, phone, photographer_name} = req.body
     const newBooking = await new Booking(req.body)
 
