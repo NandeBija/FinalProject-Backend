@@ -35,7 +35,7 @@ router.get("/:id",  [ verifyTokenAndAdmin], async (req, res) => {
   });
 
 // WRITE TO US/ CREATE A MESSAGE.
-router.post("/", [verifyTokenAndAuthorization], async (req, res, next)=>{
+router.post("/",  async (req, res, next)=>{
     const newContact = new Contact(req.body)
     try{
         const savedContact = await newContact.save()
