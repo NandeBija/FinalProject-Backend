@@ -27,7 +27,7 @@ db.once("open", () => console.log("Connected to database"));
 app.set("port", process.env.PORT || 2088);
 app.use(express.json());
 app.use(cors());
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
