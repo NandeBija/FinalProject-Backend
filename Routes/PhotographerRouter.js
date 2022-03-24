@@ -32,9 +32,9 @@ router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, 
     else{
         photographers = await  Photographer.find()
       }
-      res.status(200).json(photographers)
+      return res.status(200).json(photographers)
     } catch (error) {
-      res.status(500).send({ message: error.message });
+     return  res.status(500).send({ message: error.message });
     }
   });
   
