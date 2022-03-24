@@ -1,6 +1,5 @@
 const express = require("express");
-// const cors = require(("cors")
-const bodyParser = require("body-parser");
+const cors = require("cors")
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./Routes/auth");
@@ -27,7 +26,7 @@ db.once("open", () => console.log("Connected to database"));
 
 app.set("port", process.env.PORT || 2088);
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json())
 
 app.use("/auth", authRoute);
