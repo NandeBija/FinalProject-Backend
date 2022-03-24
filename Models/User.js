@@ -4,17 +4,17 @@ const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, "Please include your name"],
       unique: true, //so that no user duplicates the same username//
     },
     email: {
       type: String,
-      required: true,
+      required: [true, "Please include your email"],
       unique: true,
     },
     password: {
       type: String,
-      required: true,
+      required: [true, "Please include your password"],
     },
     profilePicture: {
       type: String,

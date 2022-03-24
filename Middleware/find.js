@@ -28,7 +28,7 @@ async function getUser(req, res, next) {
     }
     res.post = post;
     return next();
-  }
+  } 
 
    // Get photographer function
    async function getPhotographer(req, res, next) {
