@@ -1,24 +1,61 @@
 const mongoose = require("mongoose")
 
 const PhotographerProfileSchema = new mongoose.Schema({
- name:{
+   profilePic:{
      type:String,
-     required:true,
-     unique:true
+     required:false,
+     unique:false
  },
- rate:{
+ name:{
     type:String,
     required:true,
+     unique:false
  },
- services:{
+ city:{
+   type:String,
+   required:true,
+    unique:false
+},
+project_number:{
     type:String,
-    required:true,
+    required:false,
  },
- projects:{
-   type:Array,
-   required:false
-   
-}
+ following_number:{
+   type:String,
+   required:false,
+},
+follower_number:{
+   type:String,
+   required:false,
+},
+about_1:{
+   type:String,
+   required:false,
+},
+about_2:{
+   type:String,
+   required:false,
+},
+about_3:{
+   type:String,
+   required:false,
+},
+proj_1:{
+   type:String,
+   required:false,
+},
+proj_2:{
+   type:String,
+   required:false,
+},
+proj_3:{
+   type:String,
+   required:false,
+},
+proj_4:{
+   type:String,
+   required:false,
+},
 
 },{timestamps:true})  //gives the created an dupdated at times //
 

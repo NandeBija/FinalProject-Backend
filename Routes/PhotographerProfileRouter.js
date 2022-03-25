@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Photographer = require("../Models/Photographer")
+const PhotographerProfile = require("../Models/PhotographerProfile")
 const {verifyTokenAndAuthorization, verifyTokenAndAdmin} = require("../Middleware/authenticate")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -8,39 +8,41 @@ const {getPhotographer} = require("../Middleware/find")
 
 // CREATE NEW PHOTOGRAPHER 
 router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
-    const {name, rate, services, projects} = req.body
-    const newPhotographer = await new Photographer(req.body)
+    const {profilePic, name, city, project_number, following_number, follower, number, about_1, about_2, about_3, proj_1, proj_2, proj_4} = req.body
+    const newProfile = await new PhotographerProfile(req.body)
 
     try{
-        const savedPhotographer = await newPhotographer.save()
-        res.status(200).json(savedPhotographer)
+        const savedProfile = await newProfile.save()
+        res.status(200).json(savedProfile)
     }catch(error){
-        res.status(500).json(err)
+        res.status(500).json(error)
     }
 });
+
+
 
 // GET ALL photographers using authenticated user token
 router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, res) => {
     const username = req.query.user   
     try {
-        let photographers;
+        let profiles;
       if(username){
-          photographers = await Photographer.find({username:username})
+          profiles = await PhotographerProfile.find({username:username})
       }
     else{
-        photographers = await  Photographer.find()
+        profiles = await  PhotographerProfile.find()
       }
-      res.status(200).json(photographers)
+      return res.status(200).json(profiles)
     } catch (error) {
-      res.status(500).send({ message: error.message });
+     return  res.status(500).send({ message: error.message });
     }
   });
   
-//   // GET ALL PHOTOGRAPHERS BY ID USER USING USER id
-router.get("/:id", [verifyTokenAndAdmin, verifyTokenAndAuthorization , getPhotographer], async (req, res) => {
+//   // GET ALL PHOTOGRAPHER PROFILES BY ID USER USING USER id
+router.get("/:id", [verifyTokenAndAdmin, verifyTokenAndAuthorization ], async (req, res) => {
     try{
-        const photographer = await Photographer.findById(req.params.id)
-    res.status(200).json(photographer);}
+        const profile = await PhotographerProfile.findById(req.params.id)
+    res.status(200).json(profile);}
     catch(err){
         res.status(500).json(err) 
     }
@@ -49,21 +51,21 @@ router.get("/:id", [verifyTokenAndAdmin, verifyTokenAndAuthorization , getPhotog
 
 // UPDATE AND REPLACE previous photographer information 
 
-router.put("/:id", [verifyTokenAndAuthorization, getPhotographer], async (req, res, next) => {
-  const { name , rate, services, projects } = req.body;
-  if (name ) res.photographer.name  = name ;
-  if (rate) res.photographer.rate = rate;
-  if (services) res.photographer.services = services;
+// router.put("/:id", [verifyTokenAndAuthorization, getPhotographer], async (req, res, next) => {
+//   const { name , rate, services, projects } = req.body;
+//   if (name ) res.photographer.name  = name ;
+//   if (rate) res.photographer.rate = rate;
+//   if (services) res.photographer.services = services;
 
-  if (projects) res.photographer.projects = projects;
+//   if (projects) res.photographer.projects = projects;
   
-  try {
-    const updatedPhotographer = await res.photographer.save();
-    res.status(201).send(updatedPhotographer);
-  } catch (error) {
-    res.status(400).json({ message: error.message })
-  }
-})
+//   try {
+//     const updatedPhotographer = await res.photographer.save();
+//     res.status(201).send(updatedPhotographer);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message })
+//   }
+// })
 
 
 module.exports = router;

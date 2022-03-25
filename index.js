@@ -8,6 +8,8 @@ const postRouter = require("./Routes/PostRouter");
 const bookingRouter = require("./Routes/BookingRouter");
 const contactRouter = require("./Routes/ContactRouter"); 
 const photographerRouter = require("./Routes/PhotographerRouter");
+const photographerProfileRouter = require("./Routes/PhotographerProfileRouter");
+
 const { getPost, getUser } = require("./Middleware/find");
 const path = require("path");
 dotenv.config();
@@ -34,6 +36,7 @@ app.use("/users", userRoute);
 app.use("/posts", postRouter);
 app.use("/contact", contactRouter);
 app.use("/photographers", photographerRouter);
+app.use("/profile", photographerProfileRouter);
 app.use("/booking", bookingRouter);
 
 app.listen(app.get("port"), (server) => {
