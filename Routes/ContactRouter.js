@@ -5,6 +5,34 @@ const User = require("../Models/User")
 const {verifyTokenAndAuthorization, verifyTokenAndAdmin} = require("../Middleware/authenticate")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
+const nodemailer = require("nodemailer")
+
+// Setting up nodemailer
+async function mainMail(name, email, subject, message) {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.PASSWORD,
+    },
+  });
+  const mailOption = {
+    from: process.env.GMAIL_USER,
+    to: process.env.EMAIL,
+    subject: subject,
+    html: `You got a message from 
+    Email : ${email}
+    Name: ${name}
+    Message: ${message}`,
+  };
+  try {
+    await transporter.sendMail(mailOption);
+    return Promise.resolve("Message Sent Successfully!");
+  } catch (error) {
+    console.log(error)
+    return Promise.reject(error);
+  }
+}
 
 // GET ALL CONTACTS BY USERNAME
 router.get("/", [ verifyTokenAndAdmin], async (req, res) => {
@@ -36,13 +64,33 @@ router.get("/:id",  [ verifyTokenAndAdmin], async (req, res) => {
 
 // WRITE TO US/ CREATE A MESSAGE.
 router.post("/",  async (req, res, next)=>{
-    const newContact = new Contact(req.body)
-    try{
-        const savedContact = await newContact.save()
-        res.status(200).json(savedContact)
-    }catch(err){
-        res.status(500).json(err)
-    }
+    // Setting up nodemailer
+const { name, email, subject, message} =req.body
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.PASSWORD,
+    },
+  });
+  const mailOption = {
+    from: req.body.email,
+    to: process.env.GMAIL_USER,
+    subject: `Message from ${req.body.email}: ${req.body.subject}`,
+    html: `You got a message from 
+    Email : ${email}
+    Name: ${name}
+    Subject : ${subject}
+    Message: ${message}`,
+  };
+  try {
+    await transporter.sendMail(mailOption);
+    return Promise.resolve("Message Sent Successfully!");
+  } catch (error) {
+    console.log(error)
+    return Promise.reject(error);
+  }
+
 })
 
 

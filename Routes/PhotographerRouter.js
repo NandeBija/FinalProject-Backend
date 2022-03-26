@@ -19,8 +19,6 @@ router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
     }
 });
 
-
-
 // GET ALL photographers using authenticated user token
 router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, res) => {
     const username = req.query.user   
@@ -67,5 +65,19 @@ router.put("/:id", [verifyTokenAndAuthorization, getPhotographer], async (req, r
   }
 })
 
+// DELETE A Photgrapher
+router.delete(
+  "/:id",
+  [verifyTokenAndAuthorization, getPhotographer],
+  async (req, res, next) => {
+    const photographer = { id: req.params.id };
+    try {
+      await res.photographer.remove();
+      res.json({ message: "photographer deleted" });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  }
+);
 
 module.exports = router;

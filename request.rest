@@ -1,10 +1,11 @@
 ###              USERS USERS USERS USERS USERS 
 POST http://localhost:2088/users/register
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-    "username":"Seth",
-    "email":"Seth@gmail.com",
+    "username":"god",
+    "email":"god@gmail.com",
     "password":"123456"
 }
 
@@ -32,8 +33,9 @@ GET http://localhost:2088/users
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 ###
-DELETE http://localhost:2088/users/6228f686119f518ee8ce5065
+DELETE http://localhost:2088/users/623ecda71d5cea836249be67
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 ###
 
@@ -42,17 +44,19 @@ Content-Type: application/json
 # Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6IlNldGgiLCJlbWFpbCI6IlNldGhAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkLjA3b0Vva3pXWnZ0UXhtUk9rOHZuZWVWbVFkNWJDWWc3YllJL1lDN1ZZZDV5dUFaaDVibmEiLCJwcm9maWxlUGljdHVyZSI6IiIsImlzQWRtaW4iOmZhbHNlLCJfaWQiOiI2MjNhZDc1MmMzMmJkNzNjMDA3NWZmYzYiLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTIzVDA4OjE2OjE4Ljk0MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTIzVDA4OjE2OjE4Ljk0MFoiLCJfX3YiOjB9.WvDk1rYwVJQWtYCfsJPYyCwHDa6Wc1XaXorwb6uAFVE
 
 {  
-     "email":"Seth@gmail.com",
-    "password":"123456"
+     "email":"curtainupdated@gmail.com",
+     
+    "password":"1234586"
 }
 
 ###
-PUT http://localhost:2088/users/6228f686119f518ee8ce5065
+PUT http://localhost:2088/users/623e28fb9fef101e1aa6e590
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {  
-  "username": "NandeUpdated",
-    "email": "Nande@gmail.com",
+  "username": "curtainUpdated",
+    "email": "curtainupdated@gmail.com",
     "password": "1234586",
     "profilePicture": ""
 }
@@ -130,7 +134,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-    "name":"hisTall",
+    "name":"test2",
     "rate":"R50/hr",
     "services":"Photography, Photo editing",
     "projects":"lots and lots",
@@ -143,16 +147,23 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 ### UPDATE photographers
-PUT http://localhost:2088/photographers/623a217ee13f69ea27e248d1
+PUT http://localhost:2088/photographers/623b6f923e3405e1c29bc1fa
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-"name": "Sekzin",
+"name": "histaller",
     "rate": "R80/hr",
     "services": "Photography, Photo editing, Photography lessons",
-    "projects": "a few"
+    "projects": "just some",
+    "role":"played" 
     }
+
+### DELETE ALL Photographers
+
+DELETE http://localhost:2088/photographers/623ed2126e1fb6445e525728
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 
 ########### BOOKINGS!###############################
@@ -161,17 +172,17 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-  "city":"Durban",
-  "username":"Sekrish",
+  "city":"GcuTown",
+  "username":"Gcu",
     "date":"12/04/2022",
     "time":"08:12AM",
-    "email":"Nandeb@gmail.com",
+    "email":"Gcu@gmail.com",
     "phone":"0824072120",
     "photographer_name":"Seko Mpofu"
 }
 
 ###
-GET http://localhost:2088/booking
+GET http://localhost:2088/booking/623b81a1f144b86ccacc2713
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
@@ -214,3 +225,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3Z
          "proj_3":"https://images.unsplash.com/photo-1453791052107-5c843da62d97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
          "proj_4":"https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"  
 }
+
+###
+
+GET http://localhost:2088/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
+
+

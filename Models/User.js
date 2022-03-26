@@ -1,32 +1,31 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
-const UserSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: [true, "Please include your name"],
-      unique: true, //so that no user duplicates the same username//
+const UserSchema = new mongoose.Schema({
+    username:{
+        type:String,
+        required:true,
+        unique:true  //so that no user duplicates the same username//
     },
-    email: {
-      type: String,
-      required: [true, "Please include your email"],
-      unique: true,
+    email:{
+        type:String,
+        required:true,
+        unique:true
     },
-    password: {
-      type: String,
-      required: [true, "Please include your password"],
+    password:{
+        type:String,
+        required:true,
     },
-    profilePicture: {
-      type: String,
-      required: false,
-      default: "",
+    profilePicture:{
+        type:String,
+        required:false,
+        default:""
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  { timestamps: true }
-); //gives the created an dupdated at times //
+    isAdmin:{
+        type:Boolean,
+        default: false
+    }
 
-module.exports = mongoose.model("User", UserSchema);
+},{timestamps:true})  //gives the created an dupdated at times //
+
+
+module.exports = mongoose.model("User", UserSchema)
