@@ -9,8 +9,6 @@ const bookingRouter = require("./Routes/BookingRouter");
 const contactRouter = require("./Routes/ContactRouter"); 
 const nodemailer = require("nodemailer");
 const photographerRouter = require("./Routes/PhotographerRouter");
-const photographersRouter = require("./Routes/PhotographersRouter");
-
 const photographerProfileRouter = require("./Routes/PhotographerProfileRouter");
 
 const { getPost, getUser } = require("./Middleware/find");
@@ -66,8 +64,6 @@ app.use("/users", userRoute);
 app.use("/posts", postRouter);
 app.use("/contact", contactRouter);
 app.use("/photographers", photographerRouter);
-app.use("/photographerss", photographersRouter);
-
 app.use("/profile", photographerProfileRouter);
 app.use("/booking", bookingRouter);
 
