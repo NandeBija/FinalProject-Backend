@@ -8,31 +8,31 @@ const jwt = require("jsonwebtoken")
 const nodemailer = require("nodemailer")
 
 // Setting up nodemailer
-async function mainMail(name, email, subject, message) {
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.PASSWORD,
-    },
-  });
-  const mailOption = {
-    from: process.env.GMAIL_USER,
-    to: process.env.EMAIL,
-    subject: subject,
-    html: `You got a message from 
-    Email : ${email}
-    Name: ${name}
-    Message: ${message}`,
-  };
-  try {
-    await transporter.sendMail(mailOption);
-    return Promise.resolve("Message Sent Successfully!");
-  } catch (error) {
-    console.log(error)
-    return Promise.reject(error);
-  }
-}
+// async function mainMail(name, email, subject, message) {
+//   const transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: process.env.GMAIL_USER,
+//       pass: process.env.PASSWORD,
+//     },
+//   });
+//   const mailOption = {
+//     from: process.env.GMAIL_USER,
+//     to: process.env.EMAIL,
+//     subject: subject,
+//     html: `You got a message from 
+//     Email : ${email}
+//     Name: ${name}
+//     Message: ${message}`,
+//   };
+//   try {
+//     await transporter.sendMail(mailOption);
+//     return Promise.resolve("Message Sent Successfully!");
+//   } catch (error) {
+//     console.log(error)
+//     return Promise.reject(error);
+//   }
+// }
 
 // GET ALL CONTACTS BY USERNAME
 router.get("/", [ verifyTokenAndAdmin], async (req, res) => {
