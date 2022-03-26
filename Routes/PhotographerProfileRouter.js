@@ -20,7 +20,6 @@ router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
 });
 
 
-
 // GET ALL photographers using authenticated user token
 router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, res) => {
     const username = req.query.user   
@@ -38,7 +37,7 @@ router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, 
     }
   });
   
-//   // GET ALL PHOTOGRAPHER PROFILES BY ID USER USING USER id
+// GET ALL PHOTOGRAPHER PROFILES BY ID USER USING USER id
 router.get("/:id", [verifyTokenAndAdmin, verifyTokenAndAuthorization ], async (req, res) => {
     try{
         const profile = await PhotographerProfile.findById(req.params.id)

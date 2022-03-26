@@ -6,6 +6,8 @@ const {verifyTokenAndAuthorization, verifyTokenAndAdmin} = require("../Middlewar
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const nodemailer = require("nodemailer")
+const dotenv = require('dotenv');
+dotenv.config();
 
 // Setting up nodemailer
 // async function mainMail(name, email, subject, message) {
@@ -65,37 +67,31 @@ router.get("/:id",  [ verifyTokenAndAdmin], async (req, res) => {
 // WRITE TO US/ CREATE A MESSAGE.
 router.post("/",  async (req, res, next)=>{
     // Setting up nodemailer
-const { name, email, subject, message} =req.body
+async function mainMail(name, email, subject, message) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    host:"smtp.gmail.com",
-    port:465,
-    secure: true,
     auth: {
       user: process.env.GMAIL_USER,
       pass: process.env.PASSWORD,
     },
   });
   const mailOption = {
-    from: req.body.email,
-    to: process.env.GMAIL_USER,
-    subject: `Message from ${req.body.email}: ${req.body.subject}`,
+    from: process.env.GMAIL_USER,
+    to: process.env.EMAIL,
+    subject: subject,
     html: `You got a message from 
     Email : ${email}
     Name: ${name}
-    Subject : ${subject}
     Message: ${message}`,
   };
-  transporter.sendMail(mailOption, function (error, info){
-    if(error){
-      console.log(error);
-      res.status(400).send({msg:"Email could not be sent" + error})
-    }
-    else{
-      console.log("Email sent:" + info.response)
-      res.send({msg:"Message sent successfully"})
-    };
-  });
+  try {
+    await transporter.sendMail(mailOption);
+    return Promise.resolve("Message Sent Successfully!");
+  } catch (error) {
+    console.log(error)
+    return Promise.reject(error);
+  }
+}
 });
 //   try {
 //     await transporter.sendMail(mailOption);
