@@ -9,7 +9,7 @@ const bookingRouter = require("./Routes/BookingRouter");
 const contactRouter = require("./Routes/ContactRouter"); 
 const nodemailer = require("nodemailer");
 const photographerRouter = require("./Routes/PhotographerRouter");
-const photographersRouter = require("./Routes/");
+const photographersRouter = require("./Routes/PhotographersRouter");
 
 const photographerProfileRouter = require("./Routes/PhotographerProfileRouter");
 
