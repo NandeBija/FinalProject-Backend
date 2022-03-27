@@ -8,7 +8,7 @@ const {getPhotographer} = require("../Middleware/find")
 
 // CREATE NEW PHOTOGRAPHER 
 router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
-    const {name, rate, services, projects, role} = req.body
+    const {name, img, insta_img, facebook_img, titter_img, insta_link, facebook_link, twitter_link} = req.body
     const newPhotographer = await new Photographer(req.body)
 
     try{

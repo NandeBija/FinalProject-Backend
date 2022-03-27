@@ -4,25 +4,41 @@ const PhotographerSchema = new mongoose.Schema({
  name:{
      type:String,
      required:true,
-     unique:true
+     
  },
- role:{
-    type: String,
-    required: false
+  img:{
+     type:String,
+     required:false,
  },
- rate:{
-    type:String,
-    required:true,
- },
- services:{
-    type:String,
-    required:true,
- },
- projects:{
-   type:Array,
-   required:false
-   
- },
+
+    
+ insta_img:{
+   type: String,
+   required: false
+},
+facebook_img:{
+   type: String,
+   required: false
+},
+twitter_img:{
+   type: String,
+   required: false
+},
+insta_link:{
+   type: String,
+   required: false
+},
+facebook_link:{
+   type: String,
+   required: false
+},
+twitter_link:{
+   type: String,
+   required: false
+},
+
+ 
+ 
 },{timestamps:true}) 
 
 module.exports = mongoose.model("Photographer", PhotographerSchema);
