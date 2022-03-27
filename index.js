@@ -27,24 +27,9 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to database"));
 
-// CORS function
-const corsOpts = {
-  origin: '*',
-
-  methods: [
-    'GET',
-    'POST',
-  ],
-
-  allowedHeaders: [
-    'Content-Type',
-  ],
-};
-
-
 app.set("port", process.env.PORT || 2088);
 app.use(express.json());
-app.use(cors(corsOpts));
+app.use(cors());
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/posts", postRouter);
