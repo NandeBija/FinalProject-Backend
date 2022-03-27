@@ -27,38 +27,24 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to database"));
 
-// Setting up nodemailer
-// async function mainMail(name, email, subject, message) {
-//   const transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: process.env.GMAIL_USER,
-//       pass: process.env.PASSWORD,
-//     },
-//   });
-//   const mailOption = {
-//     from: process.env.GMAIL_USER,
-//     to: process.env.EMAIL,
-//     subject: subject,
-//     html: `You got a message from 
-//     Email : ${email}
-//     Name: ${name}
-//     Message: ${message}`,
-//   };
-//   try {
-//     await transporter.sendMail(mailOption);
-//     return Promise.resolve("Message Sent Successfully!");
-//   } catch (error) {
-//     console.log(error)
-//     return Promise.reject(error);
-//   }
-// }
+// CORS function
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
 
 app.set("port", process.env.PORT || 2088);
 app.use(express.json());
-app.use(cors());
-// app.use(bodyParser.json())
-
+app.use(cors(corsOpts));
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/posts", postRouter);
@@ -66,6 +52,15 @@ app.use("/contact", contactRouter);
 app.use("/photographers", photographerRouter);
 app.use("/profile", photographerProfileRouter);
 app.use("/booking", bookingRouter);
+
+// CORS headers
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 app.listen(app.get("port"), (server) => {
   console.info(`Server listen on port ${app.get("port")}`);
