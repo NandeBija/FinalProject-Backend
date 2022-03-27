@@ -133,12 +133,12 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-    "name":"Lulu",
-    "img":"https://i.postimg.cc/nVv9BGdW/Screenshot-from-2022-03-26-13-51-26.png",
+    "name":"Thuli P",
+    "img":"https://i.postimg.cc/KvG7YWZf/Screenshot-from-2022-03-26-13-57-45.png",
     "insta_img": "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
     "facebook_img": "https://img.icons8.com/ios/30/000000/facebook-new.png",
-     "twitter_img": "https://img.icons8.com/ios/30/000000/twitter--v1.png",
-      "insta_link": "https://www.instagram.com/melachild_blvck/",
+     "twitter_img":  "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+      "insta_link":  "https://www.instagram.com/melachild_blvck/",
       "facebook_link": "https://www.facebook.com/",
       "twitter_link": ""
 }
@@ -163,7 +163,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3Z
 
 ### DELETE ALL Photographers
 
-DELETE http://localhost:2088/photographers/623ed2126e1fb6445e525728
+DELETE http://localhost:2088/photographers/623fab23cf941fc11814fcdd
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
