@@ -13,7 +13,6 @@ const photographerProfileRouter = require("./Routes/PhotographerProfileRouter");
 
 const { getPost, getUser } = require("./Middleware/find");
 const path = require("path");
-const { runInContext } = require("vm");
 dotenv.config();
 
 const app = express();
@@ -28,26 +27,14 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to database"));
 
-// CORS function
-const corsOpts = {
-  origin: '*',
 
-  methods: [
-    'GET',
-    'POST',
-  ],
-  credentials:true,
-  optionSuccessStatus:200,
-
-  allowedHeaders: [
-    'Content-Type',
-  ],
-};
 
 
 app.set("port", process.env.PORT || 2088);
 app.use(express.json());
-app.use(cors(corsOpts));
+app.use(cors());
+// app.use(bodyParser.json())
+
 app.use("/auth", authRoute);
 app.use("/users", userRoute);
 app.use("/posts", postRouter);
