@@ -149,16 +149,29 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 ### UPDATE photographers
-PUT http://localhost:2088/photographers/623b6f923e3405e1c29bc1fa
+PUT http://localhost:2088/photographers/623fb1923e691ed6a592b948
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MjJiMzQ1ZTRjYTZkMTk5MGI3ZjE5MmEiLCJ1c2VybmFtZSI6IlNpbXRoZSIsImVtYWlsIjoiU2ltdGhlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHguM3R6T0hxYnpSNUJwOU4vQ2NQN3U4dWZrdWRqNWlUMXNJUVNENzZuYi9oSEN2eU5XTnhLIiwicHJvZmlsZVBpY3R1cmUiOiIiLCJpc0FkbWluIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAzLTExVDExOjM3OjAyLjc3MFoiLCJfX3YiOjB9.FwYCGrNn_LSl64scQHwAkYMxgapp3pNbKMc4ohPX2U4
 
 {
-"name": "histaller",
-    "rate": "R80/hr",
-    "services": "Photography, Photo editing, Photography lessons",
-    "projects": "just some",
-    "role":"played" 
+  "name":"Seko Mpofu",
+    "img":"https://i.postimg.cc/DzpRmtk6/Ano-Photographer.png",
+    "insta_img": "https://img.icons8.com/ios/30/000000/instagram-new--v1.png",
+    "facebook_img": "https://img.icons8.com/ios/30/000000/facebook-new.png",
+     "twitter_img":  "https://img.icons8.com/ios/30/000000/twitter--v1.png",
+      "insta_link":  "https://www.instagram.com/melachild_blvck/",
+      "facebook_link": "https://www.facebook.com/",
+      "twitter_link": "",
+      "role":"Videographer",
+      "city":"Cape Town",
+      "project_number":"4",
+      "follower_number":"332",
+      "following_number":"45",
+      "about":"Photographer",
+      "projects":[ {"name": "project_1", "img": "https://cdn.theculturetrip.com/wp-content/uploads/2021/11/2c1074k-e1638197792976.jpg"}, 
+      {"name": "project_2", "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hippopotamus-extreme-animals-social-1642555668.jpg"},
+      {"name": "project_3", "img": "https://www.apa.org/images/2020-03-feature-giraffe_tcm7-269465.png"},
+      {"name": "project_4", "img": "https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"}]
     }
 
 ### DELETE ALL Photographers

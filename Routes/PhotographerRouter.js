@@ -8,7 +8,7 @@ const {getPhotographer} = require("../Middleware/find")
 
 // CREATE NEW PHOTOGRAPHER 
 router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
-    const {name, img, insta_img, facebook_img, titter_img, insta_link, facebook_link, twitter_link} = req.body
+    const {name, img, insta_img, facebook_img, twitter_img, insta_link, facebook_link, twitter_link, role, city, project_number, follower_number, following_number, projects, about} = req.body
     const newPhotographer = await new Photographer(req.body)
 
     try{
@@ -50,13 +50,23 @@ router.get("/:id", [verifyTokenAndAdmin, verifyTokenAndAuthorization , getPhotog
 // UPDATE AND REPLACE previous photographer information 
 
 router.put("/:id", [verifyTokenAndAuthorization, getPhotographer], async (req, res, next) => {
-  const { name , rate, services, projects } = req.body;
+  const {name, img, insta_img, facebook_img, twitter_img, insta_link, facebook_link, twitter_link, role, city, project_number, follower_number, following_number, projects, about } = req.body
   if (name ) res.photographer.name  = name ;
-  if (rate) res.photographer.rate = rate;
-  if (services) res.photographer.services = services;
-
+  if (img) res.photographer.img = img;
+  if (insta_img) res.photographer.insta_img = insta_img;
+  if (facebook_img) res.photographer.facebook_img = facebook_img;
+  if (twitter_img) res.photographer.twitter_img = twitter_img;
+  if (insta_link) res.photographer.insta_link = insta_link;
+  if (facebook_link) res.photographer.facebook_link = facebook_link;
+  if (twitter_link) res.photographer.twitter_link = twitter_link;
+  if (role) res.photographer.role = role;
+  if (city) res.photographer.city = city;
+  if (project_number) res.photographer.project_number = project_number;
+  if (follower_number) res.photographer.follower_number = follower_number;
+  if (following_number) res.photographer.following_number = following_number;
   if (projects) res.photographer.projects = projects;
-  
+  if (about) res.photographer.about = about;
+
   try {
     const updatedPhotographer = await res.photographer.save();
     res.status(201).send(updatedPhotographer);
