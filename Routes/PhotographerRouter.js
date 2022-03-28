@@ -37,7 +37,7 @@ router.get("/",  async (req, res) => {
   });
   
 //   // GET ALL PHOTOGRAPHERS BY ID USER USING USER id
-router.get("/:id", [verifyTokenAndAdmin, verifyTokenAndAuthorization , getPhotographer], async (req, res) => {
+router.get("/:id", async (req, res) => {
     try{
         const photographer = await Photographer.findById(req.params.id)
     res.status(200).json(photographer);}
