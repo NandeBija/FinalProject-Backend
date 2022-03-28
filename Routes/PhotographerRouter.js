@@ -23,7 +23,7 @@ router.post("/", [verifyTokenAndAuthorization], async(req, res, next)=>{
 router.get("/",  async (req, res) => {
     const username = req.query.user   
     try {
-        let photographers;
+        let photographers; 
       if(username){
           photographers = await Photographer.find({username:username})
       }
