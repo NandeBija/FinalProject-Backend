@@ -20,7 +20,6 @@ router.post("/", verifyTokenAndAuthorization,  async(req, res, next)=>{
 });
 
 // GET ALL BOOKINGS
-
 router.get("/", [verifyTokenAndAdmin, verifyTokenAndAuthorization], async (req, res) => {
     const username = req.query.user   
     try {

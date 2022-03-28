@@ -30,8 +30,8 @@ const BookingSchema = new mongoose.Schema(
     },
     photographer_name: {
       type: String,
-      required: [true, "Please include the photographer's name"],
-    },
+      required: [false, "Please include the photographer's name"],
+    }
   },
   { timestamps: true }
 ); //gives the created an dupdated at times //
