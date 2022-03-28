@@ -10,7 +10,7 @@ const BookingSchema = new mongoose.Schema(
     city: {
       type: String,
       required: [true, "Please include your city"],
-      unique: true,
+      unique: false,
     },
     date: {
       type: String,
